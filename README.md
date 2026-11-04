@@ -20,7 +20,7 @@ Tasks can be marked as repeat tasks when created, in which case they are unselec
 
 # Stack
 
-This implementatin uses vanilla JS, CSS, and localStorage for persistence.
+This implementation uses vanilla JS, CSS, and localStorage for persistence.
 
 
 ```
