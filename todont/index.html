@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f3">
+    <title>Todon't — a list of things not to do</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Todon't home">
+          <span class="brand-mark" aria-hidden="true">T.</span>
+          <span>todon't</span>
+        </a>
+        <span class="local-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          Saved on this device
+        </span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A little less doing</p>
+        <h1 id="page-title">Things I won't do<span>.</span></h1>
+        <p class="intro-copy">A list for all the things you’re happily not getting done.</p>
+      </section>
+
+      <section class="list-panel" aria-label="Your don't-do list">
+        <div class="list-heading">
+          <div>
+            <h2>Today's list</h2>
+            <p id="today-label" class="date-label"></p>
+          </div>
+          <p class="count"><span id="remaining-count">0</span> <span id="remaining-label">to avoid</span></p>
+        </div>
+
+        <p id="storage-message" class="storage-message" role="status" hidden></p>
+
+        <form id="task-form" class="task-form">
+          <label class="sr-only" for="task-input">Add something you won't do</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="160"
+            placeholder="Something you won't do…"
+            autocomplete="off"
+            required
+          >
+          <label class="repeat-option" for="repeat-input">
+            <input id="repeat-input" name="repeat" type="checkbox">
+            <span class="repeat-control" aria-hidden="true"></span>
+            <span>Every day</span>
+          </label>
+          <button class="add-button" type="submit">
+            <span aria-hidden="true">+</span>
+            <span>Add</span>
+          </button>
+        </form>
+
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+        <div id="empty-state" class="empty-state">
+          <span class="empty-icon" aria-hidden="true">↘</span>
+          <p class="empty-title">Nothing to avoid. Yet.</p>
+          <p>Add your first don't-do and give yourself permission to skip it.</p>
+        </div>
+
+        <footer class="list-footer">
+          <span><span class="legend-dot" aria-hidden="true"></span> Checked means successfully avoided</span>
+          <span>Repeating items clear at midnight</span>
+        </footer>
+      </section>
+
+      <p class="closing-note">You don't have to do it all. In fact, you don't have to do some of it at all.</p>
+    </main>
+  </body>
+</html>
